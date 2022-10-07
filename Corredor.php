@@ -22,7 +22,7 @@
                    $array = $this->tiempos;
                    try
                     {
-                        if (count($array)>5)
+                        if (count($array) >= 5)
                         {
                             throw new Exception ("No se pueden añadir mas carreras");
                         }
@@ -35,10 +35,23 @@
                             array_push($array,$tiempo); 
                         }
                     }
-                    catch (Error $e)
+                    catch (Exception $e)
                     {
-                        
+                        return $e->getMessage();
                     }
+                }
+
+                function getNombre()
+                {
+                    return $this->nombre;
+                }
+                function getId()
+                {
+                    return $this->id;
+                }
+                function getTiempos()
+                {
+                    print_r($this->tiempos);
                 }
             }
         ?>
