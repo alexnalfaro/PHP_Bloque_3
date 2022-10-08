@@ -51,7 +51,7 @@
                 }
                 function getTiempos()
                 {
-                    print_r($this->tiempos);
+                    return $this->tiempos;
                 }
             }
         ?>

@@ -1,31 +1,49 @@
 <html>
     <head>
-        <title>Corredor</title>
+        <title>Competicion</title>
     </head>
     <body>
         <?php
-            class Competicion extends Corredor
+            require ('Corredor.php');
+            class Competicion
             {
-                private $corredores = array();
+                private $corredores;
+
+                function __construct()
+                {
+                    $this->corredores = [];
+                }
 
                 function anadirCorredor($corredor)
                 {
+                    $array = $this->corredores;
+                    $array = $array + [$corredor->getId() => $corredor];
 
                 }
                 function anadirCarreraACorredor($idcorredor,$tiempo)
                 {   
-                    $nombre -> getNombre();
-                    $corredor = new Corredor($idcorredor,$nombre);
-                    $corredor->anadirCarrera($tiempo);
-                    array_push($corredores,$idcorredor,$corredor);
+                    $array = $this->corredores;
+                    $array[$idcorredor]->anadirCarrera($tiempo);
                 }
                 function mediaprimeraCarrera()
                 {
-
+                    $array = $this->corredores;
+                    $media = 0;
+                    foreach $array as $idcorredor => $corredor)
+                    {
+                        $media = $media + $corredor->getTiempos()[0];
+                    }
+                    return $media / count($array);
                 }
                 function corredormasrapido()
                 {
-
+                    $array = $this->corredores;
+                    $fastest = [];
+                    $arrayCarreras;
+                    foreach ($array as $idcorredor => $corredor)
+                    {
+                        $arrayCarreras = $
+                    }
                 }
                 function corredores15seg()
                 {
