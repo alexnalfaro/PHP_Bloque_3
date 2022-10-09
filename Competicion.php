@@ -42,16 +42,52 @@
                     $arrayCarreras;
                     foreach ($array as $idcorredor => $corredor)
                     {
-                        $arrayCarreras = $
+                        $arrayCarreras = $corredor->getTiempos();
+                        for ($i=0;$<count($arrayCarreras);$i++)
+                        {
+                            array_push($fastest,$arrayCarreras[$i]);
+                        }
                     }
+                    return "El corredor con la carrera más rapida es: ".max($fastest);
                 }
                 function corredores15seg()
                 {
+                    $arrayCarreras;
+                    $seleccionados = [];
+                    $array = $this->corredores;
 
+                    foreach ($array as $idcorredor => $corredor)
+                    {
+                        $ccarreras = 0;
+                        $arrayCarreras = $corredor->getCarreras();
+                        for ($i=0;$i<count($arrayCarreras);$i++)
+                        {
+                            if ($arrayCarreras[$i] > 15)
+                            {
+                                $ccarreras++;
+                            }
+                        }
+                        if (ccarreras > 2)
+                        {
+                            $nombre = $corredor->getNombre();
+                            array_push($seleccionados, $nombre);
+                        }
+                    }
+                    return $seleccionados;
                 }
                 function corredoresE()
                 {
-
+                    $terminae = [];
+                    $array = $this->corredores;
+                    foreach ($array as $idcorredor => $corredor) 
+                    {
+                        $nombre = $corredor->getNombre();
+                        if ((substr($nombre, -1) === 'e') ||((substr($nombre, -1) === 'E')))
+                        {
+                            array_push($terminae, $nombre);
+                        }
+                    }
+                    return $terminae;
                 }
             }
         ?>
