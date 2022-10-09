@@ -20,19 +20,20 @@
                 function anadirCarrera($tiempo)
                 {
                    $array = $this->tiempos;
+                   $largo = count($array);
                    try
                     {
-                        if (count($array) >= 5)
+                        if ($largo <= 5)
                         {
-                            throw new Exception ("No se pueden añadir mas carreras");
+                            array_push($array,$tiempo);
                         }
-                        else if ($tiempo > 5)
+                        else if ($largo === 5)
                         {
-                            throw new Exception ("La carrera no puede ser tan corta");
+                            throw new Exception ("Numero maximo de carreras alcanzado");
                         }
-                        else
+                        else if ($tiempo < 5)
                         {
-                            array_push($array,$tiempo); 
+                            throw new Exception ("La carrera es demasiado corta");
                         }
                     }
                     catch (Exception $e)
