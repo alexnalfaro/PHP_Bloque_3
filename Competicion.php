@@ -29,7 +29,7 @@
                 {
                     $array = $this->corredores;
                     $media = 0;
-                    foreach $array as $idcorredor => $corredor)
+                    foreach ($array as $idcorredor => $corredor)
                     {
                         $media = $media + $corredor->getTiempos()[0];
                     }
@@ -43,7 +43,7 @@
                     foreach ($array as $idcorredor => $corredor)
                     {
                         $arrayCarreras = $corredor->getTiempos();
-                        for ($i=0;$<count($arrayCarreras);$i++)
+                        for ($i=0;$i<count($arrayCarreras);$i++)
                         {
                             array_push($fastest,$arrayCarreras[$i]);
                         }

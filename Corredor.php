@@ -53,6 +53,10 @@
                 {
                     return $this->tiempos;
                 }
+                function mostrarTiempos()
+                {
+                    print_r($this->tiempos);
+                }
             }
         ?>
     </body>
